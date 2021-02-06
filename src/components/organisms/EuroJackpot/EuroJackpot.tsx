@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { MainContainer, EuroJackpotContainer } from './EuroJackpot.styles';
+import { MainContainer, HeaderContainer, TitleContainer, SelectView } from './EuroJackpot.styles';
 import DropdownDual from '../../molecules/DropdownDual';
 
 const EuroJackpot = (): any => {
@@ -9,11 +9,12 @@ const EuroJackpot = (): any => {
 
     return (
         <MainContainer>
-            <EuroJackpotContainer>
-                <DropdownDual
-                    onChange={(value: string) => onChangeHandle(value)}
-                />
-            </EuroJackpotContainer>
+            <HeaderContainer>
+                <TitleContainer>EUROJACKPOT RESULTS & WINNING NUMBERS</TitleContainer>
+                <SelectView>
+                    <DropdownDual onChange={(value: string) => onChangeHandle(value)} />
+                </SelectView>
+            </HeaderContainer>
         </MainContainer>
     );
 };
