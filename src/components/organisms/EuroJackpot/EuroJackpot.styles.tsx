@@ -1,10 +1,13 @@
 import styled from 'styled-components';
 
-const EuroJackpotContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    color: blue;
+export const EuroJackpotContainer = styled.div`
+    max-width: 960px;
+    width: 100%;
+    padding: 0px;
 `;
 
-export default EuroJackpotContainer;
+export const MainContainer = styled.div`
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+`;

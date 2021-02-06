@@ -1,11 +1,20 @@
 import * as React from 'react';
-import EuroJackpotContainer from './EuroJackpot.styles';
+import { MainContainer, EuroJackpotContainer } from './EuroJackpot.styles';
+import DropdownDual from '../../molecules/DropdownDual';
 
 const EuroJackpot = (): any => {
+    const onChangeHandle = (value: string) => {
+        console.log('CHANGE DUAL --> ', value);
+    };
+
     return (
-        <EuroJackpotContainer>
-            <span>Code Challenge from Lottoland by JaviGonz</span>
-        </EuroJackpotContainer>
+        <MainContainer>
+            <EuroJackpotContainer>
+                <DropdownDual
+                    onChange={(value: string) => onChangeHandle(value)}
+                />
+            </EuroJackpotContainer>
+        </MainContainer>
     );
 };
 
