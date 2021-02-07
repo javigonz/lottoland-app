@@ -2,8 +2,11 @@ import styled from 'styled-components';
 
 export const MainContainer = styled.div`
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
     margin-top: 20px;
+    width: 100%;
 `;
 
 export const HeaderContainer = styled.div`
@@ -27,4 +30,11 @@ export const TitleContainer = styled.a`
     padding-top: 10px;
     font-weight: bold;
     font-size: 20px;
+    color: black;
+`;
+
+export const ResultContainer = styled.div`
+    max-width: 960px;
+    width: 100%;
+    padding: 0px;
 `;

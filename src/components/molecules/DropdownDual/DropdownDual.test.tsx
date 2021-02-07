@@ -3,6 +3,7 @@ import Enzyme, { mount, ReactWrapper } from 'enzyme';
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 import 'jest-enzyme';
 import DropdownDual, { IDropdownDualProps } from './index';
+import { getFridaysByYear } from '../../../helpers/date.helpers';
 
 Enzyme.configure({ adapter: new Adapter() });
 
@@ -11,11 +12,16 @@ const fridaysByYearMock = [
     { label: 'Fri  01 Feb', value: '20210201' },
 ];
 
-jest.mock('../../../helpers/date.helpers', () => {
-    const mock = jest.fn().mockImplementation(() => {
-        return fridaysByYearMock;
-    });
-    return mock;
+// jest.mock('../../../helpers/date.helpers', () => {
+//     const mock = jest.fn().mockImplementation(() => {
+//         return fridaysByYearMock;
+//     });
+//     return mock;
+// });
+
+jest.mock('../../../helpers/date.helpers');
+getFridaysByYear.mockImplementation(() => {
+    return fridaysByYearMock;
 });
 
 const mockOnChange = jest.fn();

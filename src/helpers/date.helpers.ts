@@ -2,7 +2,7 @@ import * as Moment from 'moment';
 import { extendMoment } from 'moment-range';
 import IOption from '../molecules/DropdownDual';
 
-const getFridaysByYear = (year: string): Array<IOption> => {
+export const getFridaysByYear = (year: string): Array<IOption> => {
     const moment = extendMoment(Moment);
     const currentYear = String(moment().year());
     const yearRange = moment.range(
@@ -24,4 +24,4 @@ const getFridaysByYear = (year: string): Array<IOption> => {
     return fridaysByYear.reverse();
 };
 
-export default getFridaysByYear;
+export const getReadableDateFormat = (date: string): string => Moment(date).format('DD MMM YYYY');

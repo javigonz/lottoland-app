@@ -1,7 +1,7 @@
 import React from 'react';
 import { DropdownContainer } from './DropdownDual.styles';
 import Dropdown from '../Dropdown';
-import getFridaysByYear from '../../../helpers/date.helpers';
+import { getFridaysByYear } from '../../../helpers/date.helpers';
 import optionsYears from '../../../constants/constants';
 
 export interface IOption {
