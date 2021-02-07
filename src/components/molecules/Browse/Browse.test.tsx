@@ -6,12 +6,14 @@ import Browse, { IBrowseProps } from './index';
 
 Enzyme.configure({ adapter: new Adapter() });
 
+const dataHeader = [{ label: 'Tier' }, { label: 'Match' }, { label: 'Winners' }, { label: 'Amount' }];
+const dataResult = [
+    { tier: 'I', match: '5 Numbers + 2 Euronumbers', winners: '1x', amount: '€11,023,761.80' },
+    { tier: 'II', match: '5 Numbers + 1 Euronumbers', winners: '6x', amount: '€322,395.30' },
+];
 const defaultProps: IBrowseProps = {
-    dataHeader: [{ label: 'Tier' }, { label: 'Match' }, { label: 'Winners' }, { label: 'Amount' }],
-    dataResult: [
-        { tier: 'I', match: '5 Numbers + 2 Euronumbers', winners: '1x', amount: '€11,023,761.80' },
-        { tier: 'II', match: '5 Numbers + 1 Euronumbers', winners: '6x', amount: '€322,395.30' },
-    ],
+    dataHeader,
+    dataResult,
 };
 
 describe('Browse Component', () => {
@@ -54,10 +56,10 @@ describe('Browse Component', () => {
         });
 
         it('WHEN dataResult prop is empty SHOULD render empty body cells', () => {
-            renderComponent({ dataResult: [] });
+            renderComponent({ dataResult: [], dataHeader });
             const body = component.find('TableBody');
-
-            expect(body.props().children.length).toBe(0);
+            
+            expect(body.props().children).toEqual([]);
         });
 
         it('WHEN dataHeader prop is empty SHOULD render empty header cells', () => {

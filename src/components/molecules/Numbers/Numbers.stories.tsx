@@ -15,5 +15,5 @@ export const Default = Template.bind({});
 Default.args = {
     numbers: [5, 67, 8, 2, 88],
     euroNumbers: [99, 17],
-    currentDate: 20210108,
+    currentDate: '20210108',
 };

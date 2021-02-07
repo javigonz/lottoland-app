@@ -13,7 +13,7 @@ export interface IDropdownProps {
 }
 
 export const Dropdown = (props: IDropdownProps): React.ReactElement => {
-    const { options, selected = false, onChange } = props;
+    const { options, selected, onChange } = props;
     return (
         <DropDownSimple
             onChange={(event: React.ChangeEvent<HTMLSelectElement>) => onChange(event.currentTarget.value)}

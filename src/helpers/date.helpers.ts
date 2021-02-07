@@ -1,8 +1,8 @@
 import * as Moment from 'moment';
 import { extendMoment } from 'moment-range';
-import IOption from '../molecules/DropdownDual';
+import IOption from '../components/molecules/DropdownDual';
 
-export const getFridaysByYear = (year: string): Array<IOption> => {
+export const getFridaysByYear = (year: string): Array<typeof IOption> => {
     const moment = extendMoment(Moment);
     const currentYear = String(moment().year());
     const yearRange = moment.range(
@@ -10,7 +10,7 @@ export const getFridaysByYear = (year: string): Array<IOption> => {
         year === currentYear ? moment().format('YYYY-MM-DD') : `${year}-12-31`
     );
     const weeks = Array.from(yearRange.by('week'));
-    const fridaysByYear = [];
+    const fridaysByYear: any[] = [];
 
     if (year !== currentYear) {
         weeks.pop();

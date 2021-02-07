@@ -9,7 +9,7 @@
         "start": "webpack serve --mode production --env production --config webpack.config.js",
         "start:dev": "webpack serve --mode development --env development --config webpack.config.js",
         "build": "webpack --mode production --env production --config webpack.config.js",
-        "format": "prettier --write src/**/*.ts{,x}",
+        "prettier": "prettier --write src/**/*.ts{,x}",
         "lint": "tsc --noEmit && eslint src/**/*.ts{,x}",
         "test": "jest --coverage=false --verbose --detectOpenHandles",
         "test:coverage": "jest --coverage=true --verbose --detectOpenHandles",

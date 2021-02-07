@@ -4,6 +4,7 @@ import Dropdown from '../Dropdown';
 import { getFridaysByYear } from '../../../helpers/date.helpers';
 import optionsYears from '../../../constants/constants';
 
+
 export interface IOption {
     value: string;
     label: string;
@@ -18,13 +19,13 @@ export const DropdownDual = (props: IDropdownDualProps): React.ReactElement => {
     const { onChange } = props;
 
     const onChangeHandleYear = (year: string) => {
-        const fridaysByYear = getFridaysByYear(year);
+        const fridaysByYear: Array<any> = getFridaysByYear(year);
         fridaysByYear.unshift({ label: 'Please select', value: '', disabled: true });
         setOptionsByFridays(fridaysByYear);
     };
 
     React.useEffect(() => {
-        const fridaysByYear = getFridaysByYear(optionsYears[0].value);
+        const fridaysByYear: Array<any> = getFridaysByYear(optionsYears[0].value);
         setOptionsByFridays(fridaysByYear);
         onChange(fridaysByYear[0].value);
     }, []);

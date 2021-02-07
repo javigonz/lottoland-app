@@ -8,7 +8,7 @@ const EuroJackpot = (): any => {
     const dataHeader = [{ label: 'Tier' }, { label: 'Match' }, { label: 'Winners' }, { label: 'Amount' }];
     const dataResult1 = [
         { tier: 'I', match: ' 5 Numbers + 2 Euronumbers', winners: '1x', amount: '€11,023,761.80' },
-        { tier: 'II', match: ' 5 Numbers + 1 Euronumbers', winners: '6x', amount: '€322,395.30' }
+        { tier: 'II', match: ' 5 Numbers + 1 Euronumbers', winners: '6x', amount: '€322,395.30' },
     ];
     const dataResult2 = [
         { tier: 'III', match: ' 4 Numbers + 2 Euronumbers', winners: '1x', amount: '€4343434' },
