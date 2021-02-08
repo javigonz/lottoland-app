@@ -1,15 +1,17 @@
-import * as Moment from 'moment';
+import moment from 'moment';
 import { extendMoment } from 'moment-range';
+// eslint-disable-next-line import/no-cycle
 import IOption from '../components/molecules/DropdownDual';
 
 export const getFridaysByYear = (year: string): Array<typeof IOption> => {
-    const moment = extendMoment(Moment);
-    const currentYear = String(moment().year());
-    const yearRange = moment.range(
-        `${year}-01-01`,
-        year === currentYear ? moment().format('YYYY-MM-DD') : `${year}-12-31`
+    const momentExt = extendMoment(moment);
+    const currentYear = String(momentExt().year());
+    const yearRange = momentExt().range(
+        new Date(`${year}-01-01`),
+        year === currentYear ? new Date(momentExt().format('YYYY-MM-DD')) : new Date(`${year}-12-31`)
     );
-    const weeks = Array.from(yearRange.by('week'));
+
+    const weeks = Array.from(yearRange?.by('week') || {});
     const fridaysByYear: any[] = [];
 
     if (year !== currentYear) {
@@ -24,4 +26,4 @@ export const getFridaysByYear = (year: string): Array<typeof IOption> => {
     return fridaysByYear.reverse();
 };
 
-export const getReadableDateFormat = (date: string): string => Moment(date).format('DD MMM YYYY');
+export const getReadableDateFormat = (date: string): string => moment(date).format('DD MMM YYYY');

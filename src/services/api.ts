@@ -1,4 +1,4 @@
-import dataParser from '../parser/parser';
+import { dataParser } from '../parser/parser';
 
 const proxyCors = () => `https://javigonz-proxy.herokuapp.com/`;
 
