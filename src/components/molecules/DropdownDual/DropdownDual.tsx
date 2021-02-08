@@ -1,9 +1,9 @@
 import React from 'react';
 import { DropdownContainer } from './DropdownDual.styles';
 import Dropdown from '../Dropdown';
+// eslint-disable-next-line import/no-cycle
 import { getFridaysByYear } from '../../../helpers/date.helpers';
-import optionsYears from '../../../constants/constants';
-
+import { optionsYears } from '../../../constants/constants';
 
 export interface IOption {
     value: string;

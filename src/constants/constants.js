@@ -1,4 +1,4 @@
-const optionsYears = [
+export const optionsYears = [
     { label: '2021', value: '2021' },
     { label: '2020', value: '2020' },
     { label: '2019', value: '2019' },
@@ -11,4 +11,50 @@ const optionsYears = [
     { label: '2012', value: '2012' },
 ];
 
-export default optionsYears;
+export const matchEuroJackPot = [
+    '5 Numbers + 2 Euronumbers',
+    '5 Numbers + 1 Euronumber',
+    '5 Numbers + 0 Euronumbers',
+    '4 Numbers + 2 Euronumbers',
+    '4 Numbers + 1 Euronumber',
+    '4 Numbers + 0 Euronumbers',
+    '3 Numbers + 2 Euronumbers',
+    '2 Numbers + 2 Euronumbers',
+    '3 Numbers + 1 Euronumber',
+    '3 Numbers + 0 Euronumbers',
+    '1 Number + 2 Euronumbers',
+    '2 Numbers + 1 Euronumber',
+];
+
+export const keyRoman = [
+    '',
+    'C',
+    'CC',
+    'CCC',
+    'CD',
+    'D',
+    'DC',
+    'DCC',
+    'DCCC',
+    'CM',
+    '',
+    'X',
+    'XX',
+    'XXX',
+    'XL',
+    'L',
+    'LX',
+    'LXX',
+    'LXXX',
+    'XC',
+    '',
+    'I',
+    'II',
+    'III',
+    'IV',
+    'V',
+    'VI',
+    'VII',
+    'VIII',
+    'IX',
+];
