@@ -18,7 +18,7 @@ describe('parser', () => {
 
         expect(parsedData.dataResult[0].tier).toBe('I');
         expect(parsedData.dataResult[1].winners).toBe('6x');
-        expect(parsedData.dataResult[2].amount).toBe('€11,378,650.00');
+        expect(parsedData.dataResult[2].amount).toBe('€113,786.50');
 
         expect(parsedData.numbers).toEqual([2, 3, 16, 33, 46]);
 

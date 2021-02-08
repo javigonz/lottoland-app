@@ -7,6 +7,8 @@ const formatterCurrency = (currency: string): string =>
         minimumFractionDigits: 2,
     });
 
+const formatterWinners = (winners: string): string => new Intl.NumberFormat('en-US').format(winners);
+
 const formatterRoman = (num: number): string => {
     const digits = String(+num).split('');
     const key = keyRoman;
@@ -33,8 +35,8 @@ export const dataParser = (data: any): any => {
         .map((item, index) => ({
             tier: formatterRoman(index + 1),
             match: matchEuroJackPot[index],
-            winners: `${item.winners}x`,
-            amount: formatterCurrency(currency).format(item.prize),
+            winners: `${formatterWinners(item.winners)}x`,
+            amount: formatterCurrency(currency).format(item.prize / 100),
         }));
 
     const columns = Object.keys(ranks[0]).map((key) => ({
