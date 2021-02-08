@@ -1,6 +1,6 @@
 # Overview
 
-Code Challange Lottoland
+Code Challenge for Lottoland
 
 # Setup
 
@@ -22,6 +22,8 @@ Run in http://localhost:8080
 
 <code>npm run test:coverage</code>
 
+Report docs ready to have a look into coverage/lcov-report folder
+
 # Lint & Prettier
 
 It checks code with eslint and prettier
@@ -34,6 +36,6 @@ It checks code with eslint and prettier
 
 <code>npm run build</code>
 
-Cored ready to use in dist folder
+Core code ready to use in dist folder
 
 
