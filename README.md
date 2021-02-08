@@ -14,12 +14,26 @@ Install dependencies (node v10.16.2 is minimum requirement)
 
 # Run locally
 
-Run with dev environmet
-
-<code>npm run start:dev</code>
-
-Run with prod environment
-
 <code>npm run start</code>
 
-It will run in http://localhst:8080
+Run in http://localhost:8080
+
+# Coverage
+
+<code>npm run test:coverage</code>
+
+# Lint & Prettier
+
+It checks code with eslint and prettier
+
+<code>npm run lint</code>
+
+<code>npm run prettier</code>
+
+# Deploy
+
+<code>npm run build</code>
+
+Cored ready to use in dist folder
+
+
