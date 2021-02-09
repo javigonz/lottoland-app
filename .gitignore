@@ -6,6 +6,9 @@
 #ignore Test folder
 test/
 
+#ignore Coverage folder
+coverage/
+
 # User-specific files
 *.rsuser
 *.suo
