@@ -1,5 +1,3 @@
-import Dropdown, { IOption, IDropdownProps } from './Dropdown';
-
-export type { IOption, IDropdownProps };
+import Dropdown from './Dropdown';
 
 export default Dropdown;

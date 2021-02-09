@@ -1,25 +1,36 @@
-import { matchEuroJackPot, keyRoman } from '../constants/constants';
+import { matchEuroJackPot } from '../constants/constants';
+import { IResultData } from '../types/types';
 
-const formatterCurrency = (currency: string): string =>
+const formatterCurrency = (currency: string): any =>
     new Intl.NumberFormat('en-US', {
         style: 'currency',
         currency,
         minimumFractionDigits: 2,
     });
 
-const formatterWinners = (winners: string): string => new Intl.NumberFormat('en-US').format(winners);
+const formatterWinners = (winners: number): string => new Intl.NumberFormat('en-US').format(winners);
 
 const formatterRoman = (num: number): string => {
-    const digits = String(+num).split('');
-    const key = keyRoman;
-    let roman = '';
-    let i = 3;
-    // eslint-disable-next-line no-plusplus
-    while (i--) roman = (key[+digits.pop() + i * 10] || '') + roman;
-    return Array(+digits.join('') + 1).join('M') + roman;
+    let roman = "";
+    const romanNumList: any = {M:1000,CM:900, D:500,CD:400, C:100, XC:90,L:50, XV: 40, X:10, IX:9, V:5, IV:4, I:1};
+    let a;
+
+    for(const key in romanNumList){
+        if (romanNumList) {
+            a = Math.floor(num / romanNumList[key]);
+            if(a >= 0){
+                for(let i = 0; i < a; i++){
+                    roman += key;
+                }
+            }
+            num = num % romanNumList[key];
+        }
+    }
+
+    return roman;
 };
 
-export const dataParser = (data: any): any => {
+export const dataParser = (data: any): IResultData => {
     const result = data.last[0];
     const { currency, numbers, euroNumbers } = result;
     const ranks = Object.keys(result.odds)

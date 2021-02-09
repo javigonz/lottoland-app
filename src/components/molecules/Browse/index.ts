@@ -1,5 +1,3 @@
-import Browse, { IBrowseProps } from './Browse';
-
-export type { IBrowseProps };
+import Browse from './Browse';
 
 export default Browse;

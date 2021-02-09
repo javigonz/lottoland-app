@@ -1,10 +1,6 @@
 import React from 'react';
 import { Table } from 'semantic-ui-react';
-
-export interface IBrowseProps {
-    dataHeader: any[];
-    dataResult: any[];
-}
+import { IBrowseProps } from '../../../types/types';
 
 export const Browse = (props: IBrowseProps): React.ReactElement => {
     const { dataHeader = [], dataResult = [] } = props;

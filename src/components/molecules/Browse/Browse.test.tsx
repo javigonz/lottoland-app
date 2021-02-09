@@ -2,7 +2,8 @@ import React from 'react';
 import Enzyme, { mount, ReactWrapper } from 'enzyme';
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 import 'jest-enzyme';
-import Browse, { IBrowseProps } from './index';
+import Browse from './index';
+import { IBrowseProps } from '../../../types/types';
 
 Enzyme.configure({ adapter: new Adapter() });
 

@@ -4,13 +4,7 @@ import DropdownDual from '../../molecules/DropdownDual';
 import Browse from '../../molecules/Browse';
 import Numbers from '../../molecules/Numbers';
 import { get } from '../../../services/api';
-
-export interface IResultData {
-    dataHeader: any[];
-    numbers: number[];
-    euroNumbers: number[];
-    dataResult: any[];
-};
+import { IResultData } from '../../../types/types';
 
 export interface IEuroJackpotProps {
     initialData?: IResultData
@@ -34,7 +28,7 @@ const EuroJackpot = (props: IEuroJackpotProps): React.ReactElement => {
     React.useEffect(() => {
         const getData = async () => {
             if (currentDate) {
-                const result = await get(currentDate);
+                const result: IResultData = await get(currentDate);
                 setResultData(result);
             };
         };

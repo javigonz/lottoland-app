@@ -1,16 +1,6 @@
 import React from 'react';
 import DropDownSimple from './Dropdown.styles';
-
-export interface IOption {
-    value: string;
-    label: string;
-}
-
-export interface IDropdownProps {
-    options: IOption[];
-    selected: string;
-    onChange: (value: string) => void;
-}
+import { IOption, IDropdownProps } from '../../../types/types';
 
 export const Dropdown = (props: IDropdownProps): React.ReactElement => {
     const { options, selected, onChange } = props;

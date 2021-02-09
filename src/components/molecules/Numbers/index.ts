@@ -1,5 +1,3 @@
-import Numbers, { INumbersProps } from './Numbers';
-
-export type { INumbersProps };
+import Numbers from './Numbers';
 
 export default Numbers;

@@ -2,7 +2,9 @@ import React from 'react';
 import Enzyme, { mount, ReactWrapper } from 'enzyme';
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 import 'jest-enzyme';
-import Dropdown, { IDropdownProps } from './index';
+import Dropdown from './index';
+import { IDropdownProps } from '../../../types/types';
+
 
 Enzyme.configure({ adapter: new Adapter() });
 

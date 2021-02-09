@@ -2,12 +2,7 @@ import React from 'react';
 import { Label, Header } from 'semantic-ui-react';
 import { NumbersContainer } from './Numbers.styles';
 import { getReadableDateFormat } from '../../../helpers/date.helpers';
-
-export interface INumbersProps {
-    currentDate: string;
-    numbers: number[];
-    euroNumbers: number[];
-}
+import { INumbersProps } from '../../../types/types';
 
 export const Numbers = (props: INumbersProps): React.ReactElement => {
     const { numbers = [], euroNumbers = [], currentDate } = props;
