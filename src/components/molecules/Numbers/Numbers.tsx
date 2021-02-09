@@ -5,8 +5,8 @@ import { getReadableDateFormat } from '../../../helpers/date.helpers';
 
 export interface INumbersProps {
     currentDate: string;
-    numbers: Array<number>;
-    euroNumbers: Array<number>;
+    numbers: number[];
+    euroNumbers: number[];
 }
 
 export const Numbers = (props: INumbersProps): React.ReactElement => {
@@ -15,9 +15,9 @@ export const Numbers = (props: INumbersProps): React.ReactElement => {
     return (
         <NumbersContainer>
             <Header size="small">{`EuroJackpot Results for Friday ${getReadableDateFormat(currentDate)}`}</Header>
-            {numbers.map((number) => (
-                <Label circular size="big" color="grey" key={`numberkey-${number}`}>
-                    {number}
+            {numbers.map((numberItem) => (
+                <Label circular size="big" color="grey" key={`numberkey-${numberItem}`}>
+                    {numberItem}
                 </Label>
             ))}
             {euroNumbers.map((euroNumber) => (

@@ -1,7 +1,7 @@
 import { get } from './api';
 
 jest.mock('../parser/parser', () => ({
-    dataParser: (data: any) => data,
+    dataParser: (newData: any) => newData,
 }));
 
 const data = {

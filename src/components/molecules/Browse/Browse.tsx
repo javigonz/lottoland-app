@@ -2,8 +2,8 @@ import React from 'react';
 import { Table } from 'semantic-ui-react';
 
 export interface IBrowseProps {
-    dataHeader: Array<any>;
-    dataResult: Array<any>;
+    dataHeader: any[];
+    dataResult: any[];
 }
 
 export const Browse = (props: IBrowseProps): React.ReactElement => {

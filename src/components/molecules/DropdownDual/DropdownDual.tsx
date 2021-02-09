@@ -19,13 +19,13 @@ export const DropdownDual = (props: IDropdownDualProps): React.ReactElement => {
     const { onChange } = props;
 
     const onChangeHandleYear = (year: string) => {
-        const fridaysByYear: Array<any> = getFridaysByYear(year);
+        const fridaysByYear: any[] = getFridaysByYear(year);
         fridaysByYear.unshift({ label: 'Please select', value: '', disabled: true });
         setOptionsByFridays(fridaysByYear);
     };
 
     React.useEffect(() => {
-        const fridaysByYear: Array<any> = getFridaysByYear(optionsYears[0].value);
+        const fridaysByYear: any[] = getFridaysByYear(optionsYears[0].value);
         setOptionsByFridays(fridaysByYear);
         onChange(fridaysByYear[0].value);
     }, []);

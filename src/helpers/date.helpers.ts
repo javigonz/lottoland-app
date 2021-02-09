@@ -3,7 +3,7 @@ import { extendMoment } from 'moment-range';
 // eslint-disable-next-line import/no-cycle
 import IOption from '../components/molecules/DropdownDual';
 
-export const getFridaysByYear = (year: string): Array<typeof IOption> => {
+export const getFridaysByYear = (year: string): IOption[] => {
     const momentExt = extendMoment(moment);
     const currentYear = String(momentExt().year());
     const yearRange = momentExt().range(

@@ -58,7 +58,7 @@ describe('Browse Component', () => {
         it('WHEN dataResult prop is empty SHOULD render empty body cells', () => {
             renderComponent({ dataResult: [], dataHeader });
             const body = component.find('TableBody');
-            
+
             expect(body.props().children).toEqual([]);
         });
 
