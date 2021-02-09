@@ -43,6 +43,12 @@ It checks code with eslint and prettier
 
 <code>npm run prettier</code>
 
+# Run Storybook
+
+<code>npm run storybook</code>
+
+Run in http://localhost:6006
+
 # Deploy
 
 <code>npm run build</code>
