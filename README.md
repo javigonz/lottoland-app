@@ -19,7 +19,7 @@ Clone project
 
 <code>git clone https://github.com/javigonz/lottoland-app.git</code>
 
-Install dependencies (node v10.16.2 is minimum requirement)
+Install dependencies (node v10.x is minimum requirement)
 
 <code>npm install</code>
 
