@@ -13,7 +13,7 @@ export interface IResultData {
 };
 
 export interface IEuroJackpotProps {
-    initialData: IResultData
+    initialData?: IResultData
 };
 
 const EuroJackpot = (props: IEuroJackpotProps): React.ReactElement => {
