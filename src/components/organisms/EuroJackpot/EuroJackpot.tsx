@@ -6,10 +6,10 @@ import Numbers from '../../molecules/Numbers';
 import { get } from '../../../services/api';
 
 export interface IResultData {
-    dataHeader: any[];
-    numbers: number[];
-    euroNumbers: number[];
-    dataResult: any[];
+    dataHeader?: any[];
+    numbers?: number[];
+    euroNumbers?: number[];
+    dataResult?: any[];
 };
 
 const EuroJackpot = () => {

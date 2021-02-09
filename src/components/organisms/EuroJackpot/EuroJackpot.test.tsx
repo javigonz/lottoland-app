@@ -19,5 +19,11 @@ describe('EuroJackpot Component', () => {
 
             expect(component).toBeDefined();
         });
+
+        fit('WHEN ', () => {
+            renderComponent();
+
+            
+        });
     });
 });
