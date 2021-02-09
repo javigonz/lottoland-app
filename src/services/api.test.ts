@@ -28,7 +28,6 @@ describe('Api', () => {
         jest.spyOn(global.console, 'error');
         global.fetch = jest.fn(() => Promise.reject({ ...error })) as any;
         const response = await get('xxx');
-        
         expect(console.error).toBeCalled();
     });
 });
