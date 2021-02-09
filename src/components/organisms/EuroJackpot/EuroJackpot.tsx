@@ -6,15 +6,26 @@ import Numbers from '../../molecules/Numbers';
 import { get } from '../../../services/api';
 
 export interface IResultData {
-    dataHeader?: any[];
-    numbers?: number[];
-    euroNumbers?: number[];
-    dataResult?: any[];
+    dataHeader: any[];
+    numbers: number[];
+    euroNumbers: number[];
+    dataResult: any[];
 };
 
-const EuroJackpot = () => {
+export interface IEuroJackpotProps {
+    initialData: IResultData
+};
+
+const EuroJackpot = (props: IEuroJackpotProps): React.ReactElement => {
+    const initData = {
+        dataHeader: [],
+        numbers: [],
+        euroNumbers: [],
+        dataResult: [],
+    };
+    const { initialData = initData } = props;
     const [currentDate, setCurrentDate] = React.useState('');
-    const [resultData, setResultData] = React.useState(null);
+    const [resultData, setResultData] = React.useState(initialData);
 
     const onChangeHandle = (value: string) => {
         setCurrentDate(value);
@@ -22,8 +33,10 @@ const EuroJackpot = () => {
 
     React.useEffect(() => {
         const getData = async () => {
-            const result: IResultData = currentDate ? await get(currentDate) : null;
-            setResultData(result);
+            if (currentDate) {
+                const result = await get(currentDate);
+                setResultData(result);
+            };
         };
         getData();
     }, [currentDate]);
@@ -36,7 +49,7 @@ const EuroJackpot = () => {
                     <DropdownDual onChange={(value: string) => onChangeHandle(value)} />
                 </SelectView>
             </HeaderContainer>
-            {!resultData ? (
+            {resultData?.dataResult.length === 0 ? (
                 <span>Loading winners, please wait ...</span>
             ) : (
                 <ResultContainer>
