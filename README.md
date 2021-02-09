@@ -12,6 +12,7 @@ Project running with:
   - Atomic Design for methodology of design sytem
   - Testing with Jest
   - Formatter with prettier and lint
+  - Heroku proxy added to avoid cors issues
 
 # Setup
 
