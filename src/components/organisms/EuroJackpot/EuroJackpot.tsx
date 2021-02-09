@@ -5,9 +5,16 @@ import Browse from '../../molecules/Browse';
 import Numbers from '../../molecules/Numbers';
 import { get } from '../../../services/api';
 
+export interface IResultData {
+    dataHeader: any[];
+    numbers: number[];
+    euroNumbers: number[];
+    dataResult: any[];
+};
+
 const EuroJackpot = () => {
     const [currentDate, setCurrentDate] = React.useState('');
-    const [data, setData] = React.useState(null);
+    const [resultData, setResultData] = React.useState(null);
 
     const onChangeHandle = (value: string) => {
         setCurrentDate(value);
@@ -15,8 +22,8 @@ const EuroJackpot = () => {
 
     React.useEffect(() => {
         const getData = async () => {
-            const result = currentDate ? await get(currentDate) : null;
-            setData(result);
+            const result: IResultData = currentDate ? await get(currentDate) : null;
+            setResultData(result);
         };
         getData();
     }, [currentDate]);
@@ -29,12 +36,12 @@ const EuroJackpot = () => {
                     <DropdownDual onChange={(value: string) => onChangeHandle(value)} />
                 </SelectView>
             </HeaderContainer>
-            {!data ? (
+            {!resultData ? (
                 <span>Loading winners, please wait ...</span>
             ) : (
                 <ResultContainer>
-                    <Numbers currentDate={currentDate} numbers={data?.numbers} euroNumbers={data?.euroNumbers} />
-                    <Browse dataHeader={data?.dataHeader} dataResult={data?.dataResult} />
+                    <Numbers currentDate={currentDate} numbers={resultData?.numbers} euroNumbers={resultData?.euroNumbers} />
+                    <Browse dataHeader={resultData?.dataHeader} dataResult={resultData?.dataResult} />
                 </ResultContainer>
             )}
         </MainContainer>
