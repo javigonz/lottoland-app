@@ -43,7 +43,7 @@ It checks code with eslint and prettier
 
 <code>npm run prettier</code>
 
-# Run Storybook
+# Storybook
 
 <code>npm run storybook</code>
 
