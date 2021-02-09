@@ -13,7 +13,7 @@ jobs:
 
         strategy:
             matrix:
-                node-version: [10.16.3]
+                node-version: [10.x]
         env:
             DEFAULT_BRANCH: main
             CI: true

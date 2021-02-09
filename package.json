@@ -10,9 +10,9 @@
         "build": "webpack --mode production --env production --config webpack.config.js",
         "prettier": "prettier --write src/**/*.ts{,x}",
         "lint": "tslint -c tslint.json \"src/**/*.ts?(x)\"",
-        "test": "jest --coverage=false --verbose --detectOpenHandles",
-        "test:coverage": "jest --coverage=true --verbose --detectOpenHandles",
-        "test:watch": "jest --watch --coverage=false --detectOpenHandles",
+        "test": "jest --coverage=false --verbose --config jest.config.js --detectOpenHandles",
+        "test:coverage": "jest --coverage=true --verbose --config jest.config.js --detectOpenHandles",
+        "test:watch": "jest --watch --coverage=false --config jest.config.js --detectOpenHandles",
         "storybook": "start-storybook -p 6006",
         "build-storybook": "build-storybook"
     },

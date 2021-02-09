@@ -24,10 +24,11 @@ describe('Api', () => {
         expect(response).toEqual(data);
     });
 
-    it('WHEN call get function THEN should return an error response', async () => {
+    it('WHEN error THEN should return an error response', async () => {
         jest.spyOn(global.console, 'error');
         global.fetch = jest.fn(() => Promise.reject({ ...error })) as any;
-        await get('20201026');
+        const response = await get('xxx');
+        
         expect(console.error).toBeCalled();
     });
 });

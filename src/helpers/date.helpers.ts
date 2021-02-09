@@ -2,7 +2,7 @@ import moment from 'moment';
 import { extendMoment } from 'moment-range';
 
 export const getFridaysByYear = (year: string): any[] => {
-    const momentExt = extendMoment(moment);
+    const momentExt = extendMoment(moment as any);
     const currentYear = String(momentExt().year());
     const yearRange = momentExt().range(
         new Date(`${year}-01-01`),
@@ -16,7 +16,7 @@ export const getFridaysByYear = (year: string): any[] => {
         weeks.pop();
     }
 
-    weeks.forEach((week) => {
+    weeks.forEach((week: any) => {
         const friday = week.day('friday');
         fridaysByYear.push({ label: friday.format('[Fri] DD MMM'), value: `${year}${friday.format('MMDD')}` });
     });
@@ -24,4 +24,4 @@ export const getFridaysByYear = (year: string): any[] => {
     return fridaysByYear.reverse();
 };
 
-export const getReadableDateFormat = (date: string): string => moment(date).format('DD MMM YYYY');
+export const getReadableDateFormat: any = (date: string): string => moment(date).format('DD MMM YYYY');

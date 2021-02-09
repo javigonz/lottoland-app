@@ -22,7 +22,7 @@ Run in http://localhost:8080
 
 <code>npm run test:coverage</code>
 
-Report docs ready to have a look into coverage/lcov-report folder
+Report docs ready to have a look into test folder
 
 # Lint & Prettier
 
