@@ -3,7 +3,7 @@
 Code Challenge for Lottoland
 
 Project running with: 
-  - Typescript
+  - Typescript / React
   - Semantic-ui components
   - Stylized with styled-components
   - Static module bundler with Webpack
