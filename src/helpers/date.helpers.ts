@@ -1,9 +1,7 @@
 import moment from 'moment';
 import { extendMoment } from 'moment-range';
-// eslint-disable-next-line import/no-cycle
-import IOption from '../components/molecules/DropdownDual';
 
-export const getFridaysByYear = (year: string): IOption[] => {
+export const getFridaysByYear = (year: string) => {
     const momentExt = extendMoment(moment);
     const currentYear = String(momentExt().year());
     const yearRange = momentExt().range(
@@ -12,7 +10,7 @@ export const getFridaysByYear = (year: string): IOption[] => {
     );
 
     const weeks = Array.from(yearRange?.by('week') || {});
-    const fridaysByYear: any[] = [];
+    const fridaysByYear = [];
 
     if (year !== currentYear) {
         weeks.pop();
