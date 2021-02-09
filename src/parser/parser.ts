@@ -23,7 +23,7 @@ export const dataParser = (data: any): any => {
     const result = data.last[0];
     const { currency, numbers, euroNumbers } = result;
     const ranks = Object.keys(result.odds)
-        .filter((oddKey) => result.odds[oddKey].prize > 0)
+        .filter((oddKey) => oddKey !== 'rank0')
         .map((oddKey) => ({
             tier: oddKey,
             ...result.odds[oddKey],
@@ -36,7 +36,7 @@ export const dataParser = (data: any): any => {
             tier: formatterRoman(index + 1),
             match: matchEuroJackPot[index],
             winners: `${formatterWinners(item.winners)}x`,
-            amount: formatterCurrency(currency).format(item.prize / 100),
+            amount: item.prize === 0 ? 'No hits' : formatterCurrency(currency).format(item.prize / 100),
         }));
 
     const columns = Object.keys(ranks[0]).map((key) => ({
