@@ -2,6 +2,17 @@
 
 Code Challenge for Lottoland
 
+Project running with: 
+  - Typescript
+  - Semantic-ui components
+  - Stylized with styled-components
+  - Static module bundler with Webpack
+  - Babel for transpiler code
+  - Storybook for preview render modules
+  - Atomic Design for methodology of design sytem
+  - Testing with Jest
+  - Formatter with prettier and lint
+
 # Setup
 
 Clone project
