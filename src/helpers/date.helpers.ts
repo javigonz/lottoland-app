@@ -1,7 +1,7 @@
 import moment from 'moment';
 import { extendMoment } from 'moment-range';
 
-export const getFridaysByYear = (year: string) => {
+export const getFridaysByYear = (year: string): any[] => {
     const momentExt = extendMoment(moment);
     const currentYear = String(momentExt().year());
     const yearRange = momentExt().range(
@@ -10,7 +10,7 @@ export const getFridaysByYear = (year: string) => {
     );
 
     const weeks = Array.from(yearRange?.by('week') || {});
-    const fridaysByYear = [];
+    const fridaysByYear: any[] = [];
 
     if (year !== currentYear) {
         weeks.pop();
