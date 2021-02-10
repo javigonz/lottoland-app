@@ -4,28 +4,21 @@ import Dropdown from '../Dropdown';
 // eslint-disable-next-line import/no-cycle
 import { getFridaysByYear } from '../../../helpers/date.helpers';
 import { optionsYears } from '../../../constants/constants';
-
-export interface IOption {
-    value: string;
-    label: string;
-}
-
-export interface IDropdownDualProps {
-    onChange: (value: string) => void;
-}
+import { IDropdownDualProps, IOption } from '../../../types/types';
 
 export const DropdownDual = (props: IDropdownDualProps): React.ReactElement => {
-    const [optionsByFridays, setOptionsByFridays] = React.useState([]);
+    const initFridays: IOption[] = [];
+    const [optionsByFridays, setOptionsByFridays] = React.useState(initFridays);
     const { onChange } = props;
 
     const onChangeHandleYear = (year: string) => {
-        const fridaysByYear: any[] = getFridaysByYear(year);
+        const fridaysByYear: IOption[] = getFridaysByYear(year);
         fridaysByYear.unshift({ label: 'Please select', value: '', disabled: true });
         setOptionsByFridays(fridaysByYear);
     };
 
     React.useEffect(() => {
-        const fridaysByYear: any[] = getFridaysByYear(optionsYears[0].value);
+        const fridaysByYear: IOption[] = getFridaysByYear(optionsYears[0].value);
         setOptionsByFridays(fridaysByYear);
         onChange(fridaysByYear[0].value);
     }, []);

@@ -2,7 +2,8 @@ import React from 'react';
 import Enzyme, { mount, ReactWrapper } from 'enzyme';
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 import 'jest-enzyme';
-import Numbers, { INumbersProps } from './index';
+import Numbers from './index';
+import { INumbersProps } from '../../../types/types';
 import { getReadableDateFormat } from '../../../helpers/date.helpers';
 
 Enzyme.configure({ adapter: new Adapter() });

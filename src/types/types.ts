@@ -26,10 +26,16 @@ export interface INumbersProps {
 export interface IOption {
     value: string;
     label: string;
+    disabled?: boolean;
 };
 
 export interface IDropdownProps {
     options: IOption[];
     selected: string;
+    onChange: (value: string) => void;
+}
+
+// DropdownDual componenet
+export interface IDropdownDualProps {
     onChange: (value: string) => void;
 }

@@ -1,5 +1,3 @@
-import DropdownDual, { IOption, IDropdownDualProps } from './DropdownDual';
-
-export type { IOption, IDropdownDualProps };
+import DropdownDual from './DropdownDual';
 
 export default DropdownDual;
