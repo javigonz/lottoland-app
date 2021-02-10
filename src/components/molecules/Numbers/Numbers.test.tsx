@@ -8,9 +8,10 @@ import { getReadableDateFormat } from '../../../helpers/date.helpers';
 
 Enzyme.configure({ adapter: new Adapter() });
 
-jest.mock('../../../helpers/date.helpers');
-getReadableDateFormat.mockImplementation(() => {
-    return '08 Jan 2021';
+jest.mock('../../../helpers/date.helpers', () => {
+    return {
+        getReadableDateFormat: () => '08 Jan 2021',
+    };
 });
 
 const defaultProps: INumbersProps = {

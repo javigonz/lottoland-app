@@ -5,14 +5,18 @@ jest.mock('moment', () => {
     return () => jest.requireActual('moment')('2020-01-01T00:00:00.000Z');
 });
 
-jest.mock('moment-range');
-extendMoment.mockImplementation(() => {
-    return jest.fn(() => ({
-        year: jest.fn(() => 2022),
-        format: jest.fn(),
-        range: jest.fn(() => {}),
-    }));
+jest.mock('moment-range', () => {
+    return {
+        extendMoment: () => (
+            jest.fn(() => ({
+                year: jest.fn(() => 2022),
+                format: jest.fn(),
+                range: jest.fn(() => {})
+            }))
+        )
+    };
 });
+
 
 describe('Date helpers', () => {
     it('WHEN call getFridaysByYear SHOULD return empty prop', () => {

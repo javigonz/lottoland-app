@@ -19,7 +19,6 @@ jest.mock('../../../helpers/date.helpers', () => {
     };
 });
 
-
 const mockOnChange = jest.fn();
 const defaultProps: IDropdownDualProps = {
     onChange: (value: string) => mockOnChange(value),
