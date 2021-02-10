@@ -1,7 +1,7 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-
-import Numbers, { INumbersProps } from './Numbers';
+import Numbers from './Numbers';
+import { INumbersProps } from '../../../types/types';
 
 export default {
     title: 'Numbers',

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-
-import DropdownDual, { IDropdownDualProps } from './DropdownDual';
+import DropdownDual from './DropdownDual';
+import { IDropdownDualProps } from '../../../types/types';
 
 export default {
     title: 'DropdownDual',

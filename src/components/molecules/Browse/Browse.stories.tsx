@@ -1,7 +1,8 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 
-import Browse, { IBrowseProps } from './Browse';
+import Browse from './Browse';
+import { IBrowseProps } from '../../../types/types';
 
 export default {
     title: 'Browse',
