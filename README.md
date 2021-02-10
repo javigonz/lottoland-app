@@ -56,4 +56,8 @@ Run in http://localhost:6006
 
 Core code ready to use in dist folder
 
+# Github Workflow
+
+Added automatic workflow in each push action (Steps => lint, test:coverage and build)
+
 
