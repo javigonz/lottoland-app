@@ -13,17 +13,12 @@ const fridaysByYearMock = [
     { label: 'Fri  01 Feb', value: '20210201' },
 ];
 
-// jest.mock('../../../helpers/date.helpers', () => {
-//     const mock = jest.fn().mockImplementation(() => {
-//         return fridaysByYearMock;
-//     });
-//     return mock;
-// });
-
-jest.mock('../../../helpers/date.helpers');
-getFridaysByYear.mockImplementation(() => {
-    return fridaysByYearMock;
+jest.mock('../../../helpers/date.helpers', () => {
+    return {
+        getFridaysByYear: () => fridaysByYearMock,
+    };
 });
+
 
 const mockOnChange = jest.fn();
 const defaultProps: IDropdownDualProps = {
