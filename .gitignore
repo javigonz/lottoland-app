@@ -5,7 +5,8 @@
 
 #ignore Test folder
 test/
-
+dist/
+.serverless/
 #ignore Coverage folder
 coverage/
 

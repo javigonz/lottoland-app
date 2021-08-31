@@ -60,4 +60,10 @@ Core code ready to use in dist folder
 
 Added automatic workflow in each push action (Steps => lint, test:coverage and build)
 
+# Serverless / AWS deploy
+
+Added serverless depoly into AWS, with Cloudfront and S3 bucket configuration
+
+Deploy in --> https://my-serverless-lottoland-app.s3.amazonaws.com/index.html
+
 
